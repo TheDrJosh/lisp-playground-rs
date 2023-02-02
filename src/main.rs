@@ -2,21 +2,22 @@ use yew::prelude::*;
 
 #[function_component]
 fn App() -> Html {
-    let counter = use_state(|| 0);
-    let onclick = {
-        let counter = counter.clone();
-        move |_| {
-            let value = *counter + 1;
-            counter.set(value);
-        }
-    };
-    
-
     html! {
-        <div>
-            <button {onclick}>{ "+1" }</button>
-            <p>{ *counter }</p>
-        </div>
+        <main>
+            <div class="top">
+                <h1 class="title">{"Lisp Playground"}</h1>
+                <div class="acount">{"acount"}</div>
+            </div>
+            <p class="disc">
+                {"A web rust program that is a playground for the lisp programing language."}
+            </p>
+            <div class="featured_folder">
+                <div class="featured">
+                    <h2>{"Test"}</h2>
+                    <p>{"a short description."}</p>
+                </div>
+            </div>
+        </main>
     }
 }
 
