@@ -1,21 +1,55 @@
 use yew::prelude::*;
 
 #[function_component]
+fn ProjectListing() -> Html {
+    html! {
+        <div class="project_listing">
+            <h2>{"Title"}</h2>
+            <p>{"desc"}</p>
+        </div>
+    }
+}
+
+
+#[function_component]
+fn Acount() -> Html {
+    html! {
+        <div class="acount">
+            <img src="https://yew.rs/img/logo.svg"/>
+            <h3>{ "Acount Name" }</h3>
+        </div>
+        
+    }
+}
+
+#[function_component]
 fn App() -> Html {
     html! {
         <main>
-            <div class="top">
+            <div class="top_bar">
                 <h1 class="title">{"Lisp Playground"}</h1>
-                <div class="acount">{"acount"}</div>
+                <Acount/>
             </div>
-            <p class="disc">
-                {"A web rust program that is a playground for the lisp programing language."}
+            <div class="tool_bar">
+                <button>{"Home"}</button>
+                <button>{"Explore"}</button>
+                <button>{"About"}</button>
+                <button>{"New Project"}</button>
+            </div>
+            <p class="description">
+                {"Lisp Playground is a site writen in rust that allows you to play with lisp"}
             </p>
-            <div class="featured_folder">
-                <div class="featured">
-                    <h2>{"Test"}</h2>
-                    <p>{"a short description."}</p>
-                </div>
+            <div class="featured">
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
             </div>
         </main>
     }
