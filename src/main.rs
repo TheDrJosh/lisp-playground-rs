@@ -1,22 +1,56 @@
 use yew::prelude::*;
 
 #[function_component]
-fn App() -> Html {
-    let counter = use_state(|| 0);
-    let onclick = {
-        let counter = counter.clone();
-        move |_| {
-            let value = *counter + 1;
-            counter.set(value);
-        }
-    };
-    
-
+fn ProjectListing() -> Html {
     html! {
-        <div>
-            <button {onclick}>{ "+1" }</button>
-            <p>{ *counter }</p>
+        <div class="project_listing">
+            <h2>{"Title"}</h2>
+            <p>{"desc"}</p>
         </div>
+    }
+}
+
+
+#[function_component]
+fn Acount() -> Html {
+    html! {
+        <div class="acount">
+            <img src="https://yew.rs/img/logo.svg"/>
+            <h3>{ "Acount Name" }</h3>
+        </div>
+    }
+}
+
+#[function_component]
+fn App() -> Html {
+    html! {
+        <main>
+            <div class="top_bar">
+                <h1 class="title">{"Lisp Playground"}</h1>
+                <Acount/>
+            </div>
+            <div class="tool_bar">
+                <button>{"Home"}</button>
+                <button>{"Explore"}</button>
+                <button>{"About"}</button>
+                <button>{"New Project"}</button>
+            </div>
+            <p class="description">
+                {"Lisp Playground is a site writen in rust that allows you to play with lisp"}
+            </p>
+            <div class="featured">
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+                <ProjectListing/>
+            </div>
+        </main>
     }
 }
 
