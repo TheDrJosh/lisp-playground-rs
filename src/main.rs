@@ -1,4 +1,7 @@
+mod home;
 use yew::prelude::*;
+use web_sys::HtmlInputElement;
+
 
 #[function_component]
 fn ProjectListing() -> Html {
@@ -24,35 +27,18 @@ fn Acount() -> Html {
 
 #[function_component]
 fn App() -> Html {
-    html! {
-        <main>
-            <div class="top_bar">
-                <h1 class="title">{"Lisp Playground"}</h1>
-                <Acount/>
-            </div>
-            <div class="tool_bar">
-                <button>{"Home"}</button>
-                <button>{"Explore"}</button>
-                <button>{"About"}</button>
-                <button>{"New Project"}</button>
-            </div>
-            <p class="description">
-                {"Lisp Playground is a site writen in rust that allows you to play with lisp"}
-            </p>
-            <div class="featured">
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-                <ProjectListing/>
-            </div>
-        </main>
+    let test = NodeRef::default();
+    let htm = html! {
+        <>
+            <input type="checkbox" name="logged_in" value="logged_in" ref={&test} />
+            <label for="logged_in"> {"Logged In?"}</label><br/>
+            <home::Home logged_in={true} />
+        </>
+    };
+    if let Some(input) = test.cast::<HtmlInputElement>() {
+         input.value();
     }
+    htm
 }
 
 fn main() {
