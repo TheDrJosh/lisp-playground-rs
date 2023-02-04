@@ -1,4 +1,75 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
 body {
+    background: linear-gradient(to bottom right, #444444, #111111);
+    background-repeat: no-repeat;
+
+    font-size: 1.5rem;
+
+    color: whitesmoke;
+}
+
+
+.top_bar {
+    display: flex;
+    height: 8em;
+    .spacer {
+        flex: 10;
+    }
+}
+
+.acount {
+    text-align: center;
+}
+.title {
+    flex: 1;
+    text-align: center;
+    margin: 1em;
+
+}
+
+.tool_bar {
+    display: flex;
+    button {
+        flex: 2;
+    }
+    .spacer {
+        flex: 10;
+    }
+}
+
+.featured {
+    display: flex;
+    overflow-x: auto;
+}
+
+.project_title {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.project_listing {
+    flex: 1;
+    text-align: center;
+    width: 10em;
+    margin: 0.5em;
+
+    .desc {
+        text-align: left;
+        margin-top: 0;
+        font-size: 0.75em;
+        height: 9ch;
+        overflow: hidden;
+    }
+}
+
+.acount_name {
+    margin: 0;
     background: linear-gradient(to bottom right, #111111 0%, #555555 100%);
     color: white;
 }
