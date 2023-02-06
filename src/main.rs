@@ -12,6 +12,10 @@ mod common;
 mod user_info;
 mod signup;
 
+//look at https://github.com/yewstack/yew/tree/yew-v0.20.0/examples/node_refs
+
+
+
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
     #[at("/")]
