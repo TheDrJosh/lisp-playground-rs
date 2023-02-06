@@ -9,3 +9,6 @@ edition = "2021"
 yew = { version = "0.20.0", features = ["csr"] }
 web-sys = "0.3.61"
 yew-router = "0.17"
+
+# [lib]
+# crate-type = ["cdylib", "rlib"]

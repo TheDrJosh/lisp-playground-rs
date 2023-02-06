@@ -1,52 +1,85 @@
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     border: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     background: linear-gradient(to bottom right, #444444, #111111);
     background-repeat: no-repeat;
+    background-attachment: fixed;
 
     font-size: 1.5rem;
 
     color: whitesmoke;
 }
 
+header {
+    top {
+        display: flex;
+        height: 8em;
+        .title {
+            flex: 1;
+            text-align: center;
+            margin: 1em;
+        
+        }
+        .spacer {
+            flex: 10;
+        }
+        .acount {
+            text-align: center;
+            margin: auto;
+            margin-right: 2em;
+            .acount_name {
+                margin: 0;
+            }
+        }
+        .login_button {
+            height: 25%;
+            margin: auto;
+            width: 5rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            font-size: 1rem;
+        }
+    }
 
-.top_bar {
-    display: flex;
-    height: 8em;
-    .spacer {
-        flex: 10;
+    nav_bar {
+        display: flex;
+
+        button {
+            flex: 2;
+        }
+
+        .spacer {
+            flex: 10;
+        }
+
+        .spacer1 {
+            flex: 1
+        }
+
     }
 }
 
-.acount {
-    text-align: center;
-}
-.title {
-    flex: 1;
-    text-align: center;
-    margin: 1em;
 
-}
-
-.tool_bar {
-    display: flex;
-    button {
-        flex: 2;
-    }
-    .spacer {
-        flex: 10;
+home {
+    .featured {
+        display: flex;
+        overflow-x: auto;
     }
 }
 
-.featured {
-    display: flex;
-    overflow-x: auto;
-}
+
+
+
+
+
+
 
 .project_title {
     margin-bottom: 0;
@@ -68,8 +101,33 @@ body {
     }
 }
 
-.acount_name {
-    margin: 0;
-    background: linear-gradient(to bottom right, #111111 0%, #555555 100%);
-    color: white;
+
+
+login {
+    margin: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    height: initial;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    .centered_box {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    label {
+        display: block;
+        font-size: 0.9rem
+    }
 }
+
+
+
+
+
+
