@@ -8,7 +8,8 @@ pub fn Login() -> Html {
     let navigator = use_navigator().unwrap();
 
     let title_click = Callback::from(move |_| navigator.push(&Route::Home));
-    let username_text = NodeRef::new();
+    let username_text = NodeRef::default();
+    let password_text = NodeRef::default();
 
     html! {
             <signup>
@@ -20,12 +21,12 @@ pub fn Login() -> Html {
                     <div>
                         <div>
                             <label for="username">{"Email or Username:"}</label>
-                            <input type="text" id="username" name="username"/>
+                            <input type="text" id="username" name="username" ref={username_text}/>
                         </div>
 
                         <div>
                             <label for="pass">{"Password (8 characters minimum):"}</label>
-                            <input type="password" id="pass" name="password" minlength="8" required=true/>
+                            <input type="password" id="pass" name="password" minlength="8" required=true ref={password_text}/>
                         </div>
 
                         <button>{"Log in"}</button>
