@@ -1,4 +1,4 @@
 pub struct UserInfo {
-    name: String,
-    id: u64,
+    pub name: String,
+    pub id: u64,
 }

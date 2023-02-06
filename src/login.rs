@@ -3,36 +3,34 @@ use yew_router::prelude::*;
 
 use crate::Route;
 
-#[derive(PartialEq, Properties)]
-pub struct LoginProps {}
-
 #[function_component]
-pub fn Login(props: &LoginProps) -> Html {
-    let LoginProps {} = props;
+pub fn Login() -> Html {
     let navigator = use_navigator().unwrap();
 
     let title_click = Callback::from(move |_| navigator.push(&Route::Home));
-
+    let username_text = NodeRef::new();
 
     html! {
-            <login>
+            <signup>
                 <header>
                     <h1 onclick={title_click}>{"Lisp Playground"}</h1>
                 </header>
                 <div class="centered_box">
                     <h3>{"Log In"}</h3>
-                    
                     <div>
-                        <label for="username">{"Email or Username:"}</label>
-                        <input type="text" id="username" name="username"/>
+                        <div>
+                            <label for="username">{"Email or Username:"}</label>
+                            <input type="text" id="username" name="username"/>
+                        </div>
+
+                        <div>
+                            <label for="pass">{"Password (8 characters minimum):"}</label>
+                            <input type="password" id="pass" name="password" minlength="8" required=true/>
+                        </div>
+
+                        <button>{"Log in"}</button>
                     </div>
 
-                    <div>
-                        <label for="pass">{"Password (8 characters minimum):"}</label>
-                        <input type="password" id="pass" name="password" minlength="8" required=true/>
-                    </div>
-
-                    <input type="submit" value="Sign in"/>
                     <h3 style="font-size: 1em;">{"or"}</h3>
                     <button>{"Login with Github"}</button>
                     <button>{"Login with Google"}</button>
@@ -41,6 +39,6 @@ pub fn Login(props: &LoginProps) -> Html {
 
 
                 </div>
-            </login>
+            </signup>
         }
 }

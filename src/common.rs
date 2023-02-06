@@ -1,3 +1,4 @@
+use gloo_console::log;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
@@ -54,10 +55,10 @@ pub fn NavBar() -> Html {
         }
     };
     let onclick_open_project = Callback::from(move |_| {
-        web_sys::console::log_1(&"Open Project".into());
+        log!("Open Project");
     });
     let onclick_new_project = Callback::from(move |_| {
-        web_sys::console::log_1(&"New Project".into());
+        log!("New Project");
     });
 
     let user_data = use_state(|| Option::<UserInfo>::None);

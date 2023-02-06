@@ -1,6 +1,7 @@
 use about::About;
 use common::Header;
 use login::Login;
+use signup::Signup;
 use yew::prelude::*;
 use yew_router::prelude::*;
 mod filler;
@@ -9,7 +10,7 @@ mod about;
 mod login;
 mod common;
 mod user_info;
-
+mod signup;
 
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
@@ -43,7 +44,7 @@ fn switch(routes: Route) -> Html {
         },
         Route::Editor => todo!(),
         Route::LogIn => html! {<Login/>},
-        Route::SignUp => todo!(),
+        Route::SignUp => html! {<Signup/>},
         Route::NotFound => html! { <h1>{ "404" }</h1> },
     }
 }
